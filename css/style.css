@@ -208,23 +208,25 @@ body {
 .crosslinks {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: clamp(1.3rem, 4vh, 1.9rem); /* cada invitación con su aire */
+  margin-top: clamp(0.8rem, 3vh, 1.5rem);
 }
 
 .crosslinks a {
   font-family: var(--sans);
   font-weight: 300;
   font-size: clamp(0.9rem, 3.6vw, 1rem);
-  color: var(--ink-soft);
+  line-height: 1.5;
+  color: var(--ink-faint); /* invitaciones opcionales, discretas */
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
-.crosslinks a:hover {
-  color: var(--ink);
+.crosslinks a:hover,
+.crosslinks a:focus-visible {
+  color: var(--ink-soft);
   border-color: var(--line);
 }
 
