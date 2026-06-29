@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..400;1,9..144,300&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  .card {
+    position: relative;
+    width: 1200px; height: 630px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 50% 12%, #1a1f3e 0%, rgba(26,31,62,0) 55%),
+      radial-gradient(130% 120% at 82% 118%, #141833 0%, rgba(20,24,51,0) 60%),
+      #0a0c18;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #e9ecf7;
+    font-family: "Inter", sans-serif;
+  }
+  .dot {
+    position: absolute;
+    top: 150px; left: 600px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #e6ecff;
+    box-shadow: 0 0 24px 8px rgba(205,214,255,0.5), 0 0 80px 30px rgba(160,170,230,0.2);
+    transform: translate(-50%, -50%);
+  }
+  .vig {
+    position: absolute; inset: 0;
+    background: radial-gradient(120% 120% at 50% 50%, rgba(10,12,24,0) 55%, rgba(10,12,24,0.55) 100%);
+  }
+  h1 {
+    position: relative;
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+    max-width: 18ch;
+    padding: 0 90px;
+  }
+  .sub {
+    position: relative;
+    margin-top: 46px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 27px;
+    letter-spacing: 0.12em;
+    text-transform: lowercase;
+    color: #aab0c8;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="dot"></div>
+    <div class="vig"></div>
+    <h1>Nunca has estado en otro momento que este.</h1>
+    <p class="sub">siempre ahora · dos minutos, para notar</p>
+  </div>
+</body>
+</html>
