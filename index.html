@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0c18" />
+
+  <title>Siempre ahora — nunca has estado en otro momento que este</title>
+  <meta name="description" content="Una experiencia guiada de dos minutos para verificar, por ti mismo, que no se puede encontrar un borde en el tiempo. El pasado es un recuerdo presente; el futuro, un pensamiento presente." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Siempre ahora" />
+  <meta property="og:title" content="Siempre ahora" />
+  <meta property="og:description" content="Nunca has estado en otro momento que este. Búscale el borde al ahora, y verás que no lo tiene. Dos minutos, para notar." />
+  <meta property="og:url" content="https://fabianimv.github.io/siempre-ahora/" />
+  <meta property="og:image" content="https://fabianimv.github.io/siempre-ahora/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Siempre ahora — nunca has estado en otro momento que este." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Siempre ahora" />
+  <meta name="twitter:description" content="Nunca has estado en otro momento que este. Búscale el borde al ahora. Dos minutos, para notar." />
+  <meta name="twitter:image" content="https://fabianimv.github.io/siempre-ahora/assets/og-image.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0c18'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23cdd6ff'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Background: WebGL fog with CSS gradient fallback -->
+  <div class="bg" aria-hidden="true">
+    <canvas id="fog"></canvas>
+    <canvas id="trail"></canvas>
+    <div class="bg__grain"></div>
+  </div>
+
+  <noscript>
+    <div class="noscript">
+      <p>Esta experiencia necesita JavaScript para guiarte escena por escena.</p>
+      <p>Aun así, la invitación cabe en una frase: trae a la mente algo de esta mañana, y algo de mañana. Las dos cosas están ocurriendo ahora. Nunca has estado en otro momento que este.</p>
+    </div>
+  </noscript>
+
+  <main id="stage" class="stage" aria-live="polite">
+
+    <!-- ESCENA 0 — Umbral -->
+    <section class="scene scene--threshold" data-scene="0" data-type="threshold" hidden>
+      <p class="anchor">Esto tampoco es para leer.<br />Es para notar.</p>
+      <p class="subtext">Dos minutos. Solo necesitas darte cuenta de cuándo estás.</p>
+      <button class="btn" data-advance type="button">Empezar</button>
+    </section>
+
+    <!-- ESCENA 1 — Buscar el pasado -->
+    <section class="scene" data-scene="1" data-type="look" hidden>
+      <p class="anchor" data-question>Trae a la mente algo que pasó esta mañana. Lo que sea. Míralo.</p>
+      <p class="observation" data-observation>¿Dónde está ocurriendo ese recuerdo? No esta mañana. Aquí. Ahora.</p>
+      <button class="btn btn--ghost" data-advance type="button">Continuar</button>
+    </section>
+
+    <!-- ESCENA 2 — Buscar el futuro -->
+    <section class="scene" data-scene="2" data-type="look" hidden>
+      <p class="anchor" data-question>Ahora imagina algo de mañana. Un lugar, una escena.</p>
+      <p class="observation" data-observation>Esa imagen tampoco está en el futuro. Está sucediendo ahora.</p>
+      <button class="btn btn--ghost" data-advance type="button">Continuar</button>
+    </section>
+
+    <!-- ESCENA 3 — Intentar atraparlo -->
+    <section class="scene" data-scene="3" data-type="look" hidden>
+      <p class="anchor" data-question>Intenta atrapar el momento presente. Justo este. Agárralo.</p>
+      <p class="observation" data-observation>En cuanto lo nombras, ya pasó. Y sin embargo, no lograste salir de él ni un instante.</p>
+      <button class="btn btn--ghost" data-advance type="button">Continuar</button>
+    </section>
+
+    <!-- ESCENA 4 — Buscar el borde -->
+    <section class="scene" data-scene="4" data-type="look" hidden>
+      <p class="anchor" data-question>¿Cuándo empieza el ahora? ¿Cuándo termina? Búscale un borde.</p>
+      <p class="observation" data-observation>No tiene. Igual que en tu propia cara, no hay un contorno donde mirarlo de frente.</p>
+      <button class="btn btn--ghost" data-advance type="button">Continuar</button>
+    </section>
+
+    <!-- ESCENA 5 — Ancla en la respiración -->
+    <section class="scene" data-scene="5" data-type="look" hidden>
+      <p class="anchor" data-question>Sigue una respiración entera. La inhalación: ahora. La exhalación: ahora.</p>
+      <p class="observation" data-observation>Ni una sola ocurre en otro tiempo. Nunca respiraste fuera de aquí.</p>
+      <button class="btn btn--ghost" data-advance type="button">Continuar</button>
+    </section>
+
+    <!-- ESCENA 6 — Cierre -->
+    <section class="scene scene--close" data-scene="6" data-type="close" hidden>
+      <p class="anchor anchor--final">Nunca has estado en otro momento que este. Nunca podrás salir de él.</p>
+      <p class="subtext">No me creas nada. Acabas de buscarle el borde, y no lo encontraste.</p>
+      <nav class="crosslinks" aria-label="Piezas hermanas">
+        <a href="https://fabianimv.github.io/rostro-original/">¿Y en el espacio, en tu centro? Mira por ti mismo&nbsp;→</a>
+        <a href="https://fabianimv.github.io/youniverse/">¿Y a cualquier distancia? Recorre las escalas&nbsp;→</a>
+      </nav>
+      <p class="credit">En la tradición de la indagación directa. De uso libre.</p>
+    </section>
+
+  </main>
+
+  <!-- subtle hint, only while waiting is over -->
+  <div class="hint" id="hint" aria-hidden="true">toca para continuar</div>
+
+  <!-- progress -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Libraries via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script src="js/fog.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
